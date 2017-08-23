@@ -7,20 +7,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Vikas</td>
-        <td>Yadav</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Ankit</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>Prashat</td>
-        <td>Dhyani</td>
-        <td>july@example.com</td>
+      <tr *ngFor="let data of records">
+        <td>{{data.fname}}</td>
+        <td>{{data.lname}}</td>
+        <td>{{data.email}}</td>
       </tr>
     </tbody>
   </table>

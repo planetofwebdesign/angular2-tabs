@@ -1,3 +1,4 @@
+import { ITab } from './tabs/components/tab/tab.model';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+
+  tabConfig1: ITab = {
+    title: 'Tab1',
+    id: 1,
+    active: true
+  };
+
+  tabConfig2: ITab = {
+    title: 'Tab2',
+    id: 2
+  };
+
 }

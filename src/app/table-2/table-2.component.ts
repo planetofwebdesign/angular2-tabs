@@ -1,3 +1,7 @@
+import { Subscription } from 'rxjs/Rx';
+import { subscribeOn } from 'rxjs/operator/subscribeOn';
+import { ActivateTabService } from '../tabs/components/activateTab.service';
+import { TableService } from '../table/table.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Table2Component implements OnInit {
 
-  constructor() { }
+  subscription: Subscription;
+  records: any[] =  [];
+
+  constructor(
+    private tableService: TableService,
+    private activateTabService: ActivateTabService
+    ) {
+
+      this.subscription = this.activateTabService.getSelectedTab().subscribe( tab => {
+        if (tab && tab.active && tab.id === 2) {
+          debugger;
+         this.tableService.getData().subscribe(data => {
+           this.records = data;
+         });
+       }
+    });
+
+    }
 
   ngOnInit() {
+
   }
 
+ ngOnDestroy() {
+     this.subscription.unsubscribe();
+  }
 }

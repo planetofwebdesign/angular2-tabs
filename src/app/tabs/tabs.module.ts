@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { TabComponent } from './components/tab/tab.component';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { ActivateTabService } from './components/activateTab.service';
 
 @NgModule({
     imports: [
@@ -14,6 +15,6 @@ import { TabsComponent } from './components/tabs/tabs.component';
         TabsComponent
     ],
     declarations: [TabComponent, TabsComponent],
-    providers: [],
+    providers: [ActivateTabService],
 })
 export class TabModule { }

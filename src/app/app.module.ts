@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 
 import { TableComponent } from './table/table.component';
 import { Table2Component } from './table-2/table-2.component';
-
+import { TableService } from './table/table.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,7 @@ import { Table2Component } from './table-2/table-2.component';
     HttpModule,
     TabModule
   ],
-  providers: [],
+  providers: [TableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
