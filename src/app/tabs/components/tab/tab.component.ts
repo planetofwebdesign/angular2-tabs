@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TabComponent implements OnInit {
     @Input() active = false;
     // tslint:disable-next-line:no-input-rename
-    @Input('tabTitle') title: string = 'Title';
+    @Input('tabTitle') title = 'Title';
     constructor() { }
 
     ngOnInit() { }
